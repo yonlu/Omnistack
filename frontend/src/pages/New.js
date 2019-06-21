@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import { FormContainer } from "./NewStyles"
 import api from "../services/api";
-import "./New.css";
 
 class New extends Component {
   state = {
@@ -37,7 +37,8 @@ class New extends Component {
 
   render() {
     return (
-      <form action="" id="new-post" onSubmit={this.handleSubmit}>
+      <FormContainer>
+      <form action="" onSubmit={this.handleSubmit}>
         <input type="file" onChange={this.handleImageChange} />
         <input
           type="text"
@@ -70,6 +71,7 @@ class New extends Component {
 
         <button type="submit">Send</button>
       </form>
+    </FormContainer>
     );
   }
 }
