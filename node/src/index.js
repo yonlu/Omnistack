@@ -8,15 +8,18 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-nzt23.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect(
+  'mongodb+srv://omnistack:omnistack@cluster0-nzt23.mongodb.net/test?retryWrites=true&w=majority',
+  {
     useNewUrlParser: true,
-})
+  },
+);
 
 app.use((req, res, next) => {
-    req.io = io;
+  req.io = io;
 
-    next();
-})
+  next();
+});
 
 app.use(cors());
 
